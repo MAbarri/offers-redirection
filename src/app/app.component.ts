@@ -9,9 +9,11 @@ import { ActivatedRoute } from '@angular/router';
 export class AppComponent {
 
   qrURL : any = {
-    "brrr":"https://bing.com",
-    "srrr":"https://slack.com",
-    "frrr":"https://facebook.com"
+    "rdbl":"https://tracking.rmkr.lu/SHjv",
+    "hkm":"https://tracking.rmkr.lu/SHjw",
+    "almak":"https://tracking.rmkr.lu/SHjx",
+    "zara":"https://tracking.rmkr.lu/SHju",
+    "kfld":"https://tracking.rmkr.lu/SHjt"
   }
 
   constructor(private route: ActivatedRoute) {
