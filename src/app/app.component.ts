@@ -13,7 +13,8 @@ export class AppComponent {
     "hkm":"https://tracking.rmkr.lu/SHjw",
     "almak":"https://tracking.rmkr.lu/SHjx",
     "zara":"https://tracking.rmkr.lu/SHju",
-    "kfld":"https://tracking.rmkr.lu/SHjt"
+    "kfld":"https://tracking.rmkr.lu/SHjt",
+    "ssa":"https://tracking.rmkrco.com/SHkD"
   }
 
   constructor(private route: ActivatedRoute) {
@@ -39,3 +40,22 @@ export class AppComponent {
 
 
 }
+
+
+
+
+// Links : 
+
+
+// Redbull
+// https://links.newsdelivery.info/?qr=rdbl
+// Hunkemoller
+// https://links.newsdelivery.info/?qr=hkm
+// Aldi& Makita
+// https://links.newsdelivery.info/?qr=almak
+// Zara
+// https://links.newsdelivery.info/?qr=zara
+// Kaufland
+// https://links.newsdelivery.info/?qr=kfld
+// surfshark
+// https://links.newsdelivery.info/?qr=ssa
