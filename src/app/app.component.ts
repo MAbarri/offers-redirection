@@ -8,14 +8,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AppComponent {
 
-  qrURL: any = {
-    "rdbl": "https://tracking.rmkr.lu/SHjv",
-    "hkm": "https://tracking.rmkr.lu/SHjw",
-    "almak": "https://tracking.rmkr.lu/SHjx",
-    "zara": "https://tracking.rmkr.lu/SHju",
-    "kfld": "https://tracking.rmkr.lu/SHjt",
-    "ssa": "https://tracking.rmkrco.com/SHkD",
-    "lts": "https://tracking.rmkr.lu/SHkS"
+  qrURL : any = {
+    "rdbl":"https://tracking.rmkr.lu/SHjv",
+    "hkm":"https://tracking.rmkr.lu/SHjw",
+    "almak":"https://tracking.rmkr.lu/SHjx",
+    "zara":"https://tracking.rmkr.lu/SHju",
+    "kfld":"https://tracking.rmkr.lu/SHjt",
+    "ssa":"https://tracking.rmkrco.com/SHkD",
+    "lts":"https://tracking.rmkr.lu/SHkS"
   }
 
   constructor(private route: ActivatedRoute) {
@@ -25,13 +25,13 @@ export class AppComponent {
       this.redirectToParam(queryparams);
     });
   }
-
-
-  redirectToParam(queryParams: any) {
-    console.log('conditions : ', Object.keys(queryParams), queryParams["qr"], !!this.qrURL[queryParams["qr"]], Object.keys(queryParams) && queryParams["qr"] && !!this.qrURL[queryParams["qr"]])
+  
+  
+  redirectToParam(queryParams : any){
+    console.log('conditions : ', Object.keys(queryParams) , queryParams["qr"], !!this.qrURL[queryParams["qr"]], Object.keys(queryParams) && queryParams["qr"] && !!this.qrURL[queryParams["qr"]])
     if (Object.keys(queryParams) && queryParams["qr"] && !!this.qrURL[queryParams["qr"]]) {
       console.log('redirecting ...')
-      setTimeout(() => {
+      setTimeout(()=>{
         window.location.href = this.qrURL[queryParams["qr"]];
       }, 5000)
     } else {
