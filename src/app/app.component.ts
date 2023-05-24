@@ -16,7 +16,9 @@ export class AppComponent {
     "kfld":"https://tracking.rmkr.lu/SHjt",
     "ssa":"https://tracking.rmkrco.com/SHkD",
     "lts":"https://tracking.rmkr.lu/SHkS",
-    "sam":"https://smart-assistant-mate.com/"
+    "sam":"https://smart-assistant-mate.com/",
+    "samios":"https://apps.apple.com/us/app/sam-smart-assistant-mate/id6448472727",
+    "samandroid":"https://play.google.com/store/apps/details?id=com.abarri.sammobile"
   }
 
   constructor(private route: ActivatedRoute) {
