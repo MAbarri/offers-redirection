@@ -15,12 +15,13 @@ export class AppComponent {
     "zara":"https://tracking.rmkr.lu/SHju",
     "kfld":"https://tracking.rmkr.lu/SHjt",
     "ssa":"https://tracking.rmkrco.com/SHkD",
-    "lts":"https://tracking.rmkr.lu/SHkS"
+    "lts":"https://tracking.rmkr.lu/SHkS",
+    "sam":"https://smart-assistant-mate.com/"
   }
 
   constructor(private route: ActivatedRoute) {
     console.log('Called Constructor');
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe((params:any) => {
       let queryparams = params;
       this.redirectToParam(queryparams);
     });
@@ -62,3 +63,5 @@ export class AppComponent {
 // https://links.newsdelivery.info/?qr=ssa
 // Left To Survive
 // https://links.newsdelivery.info/?qr=lts
+// SAM
+// https://links.newsdelivery.info/?qr=sam
