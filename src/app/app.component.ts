@@ -18,7 +18,8 @@ export class AppComponent {
     "lts":"https://tracking.rmkr.lu/SHkS",
     "sam":"https://smart-assistant-mate.com/",
     "samios":"https://apps.apple.com/us/app/sam-smart-assistant-mate/id6448472727",
-    "samandroid":"https://play.google.com/store/apps/details?id=com.abarri.sammobile"
+    "samandroid":"https://play.google.com/store/apps/details?id=com.abarri.sammobile",
+    "fliki":"https://fliki.ai/?via=newsDelivery"
   }
 
   constructor(private route: ActivatedRoute) {
@@ -67,3 +68,9 @@ export class AppComponent {
 // https://links.newsdelivery.info/?qr=lts
 // SAM
 // https://links.newsdelivery.info/?qr=sam
+// SAM IOS
+// https://links.newsdelivery.info/?qr=samios
+// SAM ANDROID
+// https://links.newsdelivery.info/?qr=samandroid
+// Fliki
+// https://links.newsdelivery.info/?qr=fliki
