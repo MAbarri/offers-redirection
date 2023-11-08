@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -8,34 +9,38 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AppComponent {
 
-  qrURL : any = {
-    "rdbl":"https://tracking.rmkr.lu/SHjv",
-    "hkm":"https://tracking.rmkr.lu/SHjw",
-    "almak":"https://tracking.rmkr.lu/SHjx",
-    "zara":"https://tracking.rmkr.lu/SHju",
-    "kfld":"https://tracking.rmkr.lu/SHjt",
-    "ssa":"https://tracking.rmkrco.com/SHkD",
-    "lts":"https://tracking.rmkr.lu/SHkS",
-    "sam":"https://smart-assistant-mate.com/",
-    "samios":"https://apps.apple.com/us/app/sam-smart-assistant-mate/id6448472727",
-    "samandroid":"https://play.google.com/store/apps/details?id=com.abarri.sammobile",
-    "fliki":"https://fliki.ai/?via=newsDelivery"
+  qrURL: any = {
   }
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private http: HttpClient) {
     console.log('Called Constructor');
-    this.route.queryParams.subscribe((params:any) => {
-      let queryparams = params;
-      this.redirectToParam(queryparams);
+    this.fetchQRLinks(()=>{
+      this.route.queryParams.subscribe((params: any) => {
+        let queryparams = params;
+        this.redirectToParam(queryparams);
+      });
     });
   }
-  
-  
-  redirectToParam(queryParams : any){
-    console.log('conditions : ', Object.keys(queryParams) , queryParams["qr"], !!this.qrURL[queryParams["qr"]], Object.keys(queryParams) && queryParams["qr"] && !!this.qrURL[queryParams["qr"]])
+
+  fetchQRLinks(cb : any) {
+    const headers = new HttpHeaders().set('x-apikey', '654bda8e9d264b5f411962ed');
+    this.http.get<any[]>('https://links-8026.restdb.io/rest/links', { headers: headers })
+      .subscribe((links) => {
+        links.forEach(link => {
+          this.qrURL[link.code] = link.redirectTo;
+        });
+        console.log('QR URLs fetched: ', this.qrURL);
+        cb();
+      }, error => {
+        console.error('Error fetching QR links: ', error);
+      });
+  }
+
+  redirectToParam(queryParams: any) {
+    console.log('conditions : ', Object.keys(queryParams), queryParams["qr"], !!this.qrURL[queryParams["qr"]], Object.keys(queryParams) && queryParams["qr"] && !!this.qrURL[queryParams["qr"]])
     if (Object.keys(queryParams) && queryParams["qr"] && !!this.qrURL[queryParams["qr"]]) {
       console.log('redirecting ...')
-      setTimeout(()=>{
+      setTimeout(() => {
         window.location.href = this.qrURL[queryParams["qr"]];
       }, 5000)
     } else {
