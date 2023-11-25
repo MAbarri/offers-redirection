@@ -1,0 +1,11 @@
+.ng2-pdf-viewer {
+    width: 60%;
+    height: 100vh;
+    margin: auto;
+}
+@media (max-width: 768px) {
+
+    .ng2-pdf-viewer {
+        width: 100%;
+    }
+}
