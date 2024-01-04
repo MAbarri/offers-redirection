@@ -23,8 +23,8 @@ export class LinkHandlerComponent {
   }
 
   fetchQRLinks(cb: any) {
-    const headers = new HttpHeaders().set('x-apikey', '654bda8e9d264b5f411962ed');
-    this.http.get<any[]>('https://links-8026.restdb.io/rest/links', { headers: headers })
+    const headers = new HttpHeaders().set('x-apikey', '6596d3fededfeb4c293c8364');
+    this.http.get<any[]>('https://links-27e5.restdb.io/rest/links', { headers: headers })
       .subscribe((links) => {
         links.forEach(link => {
           this.qrURL[link.code] = link.redirectTo;
